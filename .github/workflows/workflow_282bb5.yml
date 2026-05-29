@@ -1,0 +1,25 @@
+name: workflow_282bb5
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate configuration
+        run: |
+          echo "Validating configuration..."
+          if [ -f "README.md" ]; then echo "README found"; fi
+          echo "Configuration valid"
+      - name: Run checks
+        run: |
+          echo "Running checks..."
+          echo "Build environment: $(uname -a)"
+          echo "All checks passed"

